@@ -23,7 +23,7 @@ req.responseType = "json";
  * 2 = Send using GET
  */
 
-var type = 1;
+var type = 2;
 switch (type) {
     case 1: sendSmsUsingPost(req); break;
     case 2: sendSmsUsingGet(req); break;
@@ -48,7 +48,7 @@ async function sendSmsUsingGet(req) {
         + "&gw-password=" + req.password
         + "&gw-from=" + req.from
         + "&gw-to=" + req.to
-        + "&gwno-text=" + req.text
+        + "&gw-text=" + req.text
         + "&gw-dlr-mask=" + req.dlrMask
         + "&gw-dlr-url=" + req.dlrUrl
         + "&gw-resp-type=" + req.responseType;
