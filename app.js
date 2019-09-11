@@ -48,7 +48,7 @@ async function sendSmsUsingGet(req) {
         + "&gw-password=" + req.password
         + "&gw-from=" + req.from
         + "&gw-to=" + req.to
-        + "&gw-text=" + req.text
+        + "&gwno-text=" + req.text
         + "&gw-dlr-mask=" + req.dlrMask
         + "&gw-dlr-url=" + req.dlrUrl
         + "&gw-resp-type=" + req.responseType;
