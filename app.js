@@ -1,4 +1,4 @@
-var api = require('./core/WebApiSender.js');
+var api = require('./core/WebApiSender.js').default;
 var baseUrl = "http://162.253.16.28:5010/api/send";
 
 /* TODO: change according to your own data
@@ -17,13 +17,12 @@ req.dlrMask = "1";
 req.dlrUrl = "http://127.0.0.1:5002/api/dlr/save-json"
 req.responseType = "json";
 
-
 /* TODO: change this between 1 - 2 to switch result
  * 1 = Send using POST
  * 2 = Send using GET
  */
 
-var type = 2;
+var type = 1;
 switch (type) {
     case 1: sendSmsUsingPost(req); break;
     case 2: sendSmsUsingGet(req); break;

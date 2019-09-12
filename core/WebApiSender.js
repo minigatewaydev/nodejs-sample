@@ -2,7 +2,7 @@ var httpResp = require('../models/SimpleHttpResponse');
 
 var methods = {
     sendPostUsingAxiosAsync: async function (mt, url) {
-        console.log("GET using Axios")
+        console.log("POST using Axios")
         const axios = require('axios').default;
         try {
 
@@ -50,7 +50,7 @@ var methods = {
             const response = await axios.get(url);
 
             httpResp.statusCode = await response.status;
-            httpResp.responseContentString = await response.statusText;
+            httpResp.responseContentString = await response.data;
         } catch (error) {
             httpResp.error = error;
         }

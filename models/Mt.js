@@ -5,4 +5,4 @@ var prop = {
     message: 0
 }
 
-exports.prop = prop;
+module.exports = prop;
