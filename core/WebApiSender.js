@@ -1,7 +1,8 @@
-var httpResp = require('../models/SimpleHttpResponse').prop;
+var httpResp = require('../models/SimpleHttpResponse');
 
 var methods = {
-    sendUsingPostAxiosAsync: async function (mt, url) {
+    sendPostUsingAxiosAsync: async function (mt, url) {
+        console.log("GET using Axios")
         const axios = require('axios').default;
         try {
 
@@ -27,9 +28,9 @@ var methods = {
         return httpResp;
     },
 
-    sendUsingGetNodeFetchAsync: async function (url) {
+    sendGetUsingNodeFetchAsync: async function (url) {
+        console.log("GET using Node-fetch")
         const fetch = require('node-fetch').default;
-
         try {
             const response = await fetch(url);
 
@@ -42,9 +43,9 @@ var methods = {
         return httpResp;
     },
 
-    sendUsingGetAxiosAsync: async function (url) {
+    sendGetUsingAxiosAsync: async function (url) {
+        console.log("GET using Axios")
         const axios = require('axios').default;
-
         try {
             const response = await axios.get(url);
 
@@ -58,4 +59,4 @@ var methods = {
     }
 };
 
-exports.methods = methods;
+module.exports = methods;

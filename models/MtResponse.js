@@ -6,4 +6,4 @@ var prop = {
     mtList: ["", "", "", ""]
 }
 
-exports.prop = prop;
+module.exports = prop;

@@ -4,4 +4,4 @@ var prop = {
     error: ""
 }
 
-exports.prop = prop;
+module.exports = prop;

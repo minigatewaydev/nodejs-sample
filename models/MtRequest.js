@@ -10,4 +10,4 @@ var prop = {
     responseType: "json"
 }
 
-exports.prop = prop;
+module.exports = prop;

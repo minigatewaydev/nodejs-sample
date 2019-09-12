@@ -1,4 +1,4 @@
-var api = require('./core/WebApiSender.js').methods;
+var api = require('./core/WebApiSender.js');
 var baseUrl = "http://162.253.16.28:5010/api/send";
 
 /* TODO: change according to your own data
@@ -6,7 +6,7 @@ var baseUrl = "http://162.253.16.28:5010/api/send";
  * please specify the 'dlrUrl'
  */
 
-var req = require('./models/MtRequest.js').prop;
+var req = require('./models/MtRequest.js');
 req.username = "httpprepaid";
 req.password = "123456";
 req.from = "NodeJs Sample";
@@ -36,7 +36,7 @@ switch (type) {
 async function sendSmsUsingPost(req) {
     console.log("Executing POST request..");
 
-    var resp = await api.sendUsingPostAxiosAsync(req, baseUrl);
+    var resp = await api.sendPostUsingAxiosAsync(req, baseUrl);
     console.log(resp);
 }
 
@@ -53,6 +53,11 @@ async function sendSmsUsingGet(req) {
         + "&gw-dlr-url=" + req.dlrUrl
         + "&gw-resp-type=" + req.responseType;
 
-    var resp = await api.sendUsingGetNodeFetchAsync(url);
+    // Uncomment for Axios GET
+    var resp = await api.sendGetUsingAxiosAsync(url);
+
+    // Uncomment for Node-Fetch GET
+    //var resp = await api.sendGetUsingNodeFetchAsync(url);
+
     console.log(resp);
 }
