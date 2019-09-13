@@ -24,30 +24,30 @@ req.responseType = "json";
 
 var type = 2;
 switch (type) {
-    case 1: sendSmsUsingPost(req); break;
-    case 2: sendSmsUsingGet(req); break;
+    case 1: sendSmsUsingPost(); break;
+    case 2: sendSmsUsingGet(); break;
     default: break;
 }
 
 
 // ================== METHODS =======================
 
-async function sendSmsUsingPost(req) {
+async function sendSmsUsingPost() {
     console.log("Executing POST request..");
 
     var resp = await api.sendPostUsingAxiosAsync(req, baseUrl);
     console.log(resp);
 }
 
-async function sendSmsUsingGet(req) {
+async function sendSmsUsingGet() {
     console.log("Executing GET request..");
 
     var url = baseUrl
         + "?gw-username=" + req.username
         + "&gw-password=" + req.password
-        + "&gw-from=" + req.from
-        + "&gw-to=" + req.to
-        + "&gw-text=" + req.text
+        + "&gw-from=" + encodeURIComponent(req.from)
+        + "&gw-to=" + encodeURIComponent(req.to)
+        + "&gw-text=" + encodeURIComponent(req.text)
         + "&gw-dlr-mask=" + req.dlrMask
         + "&gw-dlr-url=" + req.dlrUrl
         + "&gw-resp-type=" + req.responseType;
