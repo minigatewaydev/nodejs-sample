@@ -1,4 +1,4 @@
-var api = require('./core/WebApiSender.js').default;
+var api = require('./core/WebApiSender.js');
 var baseUrl = "http://162.253.16.28:5010/api/send";
 
 /* TODO: change according to your own data
@@ -22,7 +22,7 @@ req.responseType = "json";
  * 2 = Send using GET
  */
 
-var type = 1;
+var type = 2;
 switch (type) {
     case 1: sendSmsUsingPost(req); break;
     case 2: sendSmsUsingGet(req); break;
