@@ -4,3 +4,9 @@ This sample is constructed using Visual Stuido Code 1.36, so the IDE is required
 
 __Note: This sample is constructed with NodeJS framework v10.16.3.__
 
+### Running sample
+
+After all dependencies is restored, in Visual Studio Code:
+- Terminal > New Terminal
+- type <b><code>node app.js</code></b> and hit enter
+
