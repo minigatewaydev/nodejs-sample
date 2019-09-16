@@ -7,6 +7,7 @@ __Note: This sample is constructed with NodeJS framework v10.16.3.__
 ### Running sample
 
 After all dependencies is restored, in Visual Studio Code:
+- Make sure to change the required information in <code>app.js</code> file
 - Terminal > New Terminal
 - type <b><code>node app.js</code></b> and hit enter
 
