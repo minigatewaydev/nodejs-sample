@@ -1,4 +1,4 @@
-var api = require('./core/WebApiSender.js');
+var api = require('./core/RestApiSender.js');
 var baseUrl = "http://162.253.16.28:5010/api/send";
 
 /* TODO: change according to your own data
