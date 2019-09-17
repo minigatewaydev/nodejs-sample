@@ -4,8 +4,12 @@ This sample is constructed using Visual Studio Code 1.36, so the editor is requi
 
 __Note: This sample is constructed with NodeJS framework v10.16.3.__
 
-## Running sample in VSC
+## Project dependency
+This project uses the following library:
+- Axios → <code>npm i axios</code>
+- Node Fetch → <code>npm i node-fetch</code>
 
+## Running sample in VSC
 After all dependencies is restored:
 - Make sure to change the required information in <code>app.js</code> file
 - Terminal > New Terminal
