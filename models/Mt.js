@@ -1,8 +1,8 @@
 var prop = {
     mtId: "",
     receiver: "",
-    status: "",
-    message: 0
+    status: 0,
+    message: ""
 }
 
 module.exports = prop;
