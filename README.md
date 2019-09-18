@@ -11,6 +11,8 @@ This project uses the following library:
 
 ## Running sample in VSC
 After all dependencies is restored:
+- Download as ZIP and extract
+- In VSC, File > Open Folder
 - Make sure to change the required information in <code>app.js</code> file
 - Terminal > New Terminal
 - type <b><code>node app.js</code></b> and hit enter
