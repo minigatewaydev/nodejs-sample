@@ -1,20 +1,20 @@
-var api = require('./core/RestApiSender.js');
+const api = require('./core/RestApiSender.js');
+const Stopwatch = require('statman-stopwatch');
 var baseUrl = "http://162.253.16.28:5010/api/send";
 
 /* TODO: change according to your own data
  * for username & password. If you set 'dlrMask' to 1,
  * please specify the 'dlrUrl'
  */
-
 var req = require('./models/MtRequest.js');
-req.username = "httpprepaid";
-req.password = "123456";
+req.username = "YOUR_USERNAME";
+req.password = "YOUR_PASSWORD";
 req.from = "NodeJs Sample";
 req.to = "60123456789";
 req.text = "NodeJs sample using HTTP POST & GET";
 req.coding = "1";
-req.dlrMask = "1";
-req.dlrUrl = "http://127.0.0.1:5002/api/dlr/save-json"
+req.dlrMask = "0";
+req.dlrUrl = "YOUR_DLR_URL"
 req.responseType = "json";
 
 /* TODO: change this between 1 - 2 to switch result
@@ -22,7 +22,7 @@ req.responseType = "json";
  * 2 = Send using GET
  */
 
-var type = 2;
+var type = 1;
 switch (type) {
     case 1: sendSmsUsingPost(); break;
     case 2: sendSmsUsingGet(); break;
@@ -35,12 +35,21 @@ switch (type) {
 async function sendSmsUsingPost() {
     console.log("Executing POST request..");
 
+    var sw = new Stopwatch();
+    sw.start();
+
     var resp = await api.sendPostUsingAxiosAsync(req, baseUrl);
+    var elapsed = Math.round(sw.stop());
+
     console.log(resp);
+    console.log(`Time taken: ${elapsed} ms`);
 }
 
 async function sendSmsUsingGet() {
     console.log("Executing GET request..");
+
+    var sw = new Stopwatch();
+    sw.start();
 
     var url = baseUrl
         + "?gw-username=" + req.username
@@ -58,5 +67,9 @@ async function sendSmsUsingGet() {
     // Uncomment for Node-Fetch GET
     //var resp = await api.sendGetUsingNodeFetchAsync(url);
 
+    var elapsed = Math.round(sw.stop());
+
     console.log(resp);
+    console.log(`Time taken: ${elapsed} ms`);
+
 }

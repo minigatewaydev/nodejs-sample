@@ -8,6 +8,7 @@ __Note: This sample is constructed with NodeJS framework v10.16.3.__
 This project uses the following library:
 - Axios → <code>npm i axios</code>
 - Node Fetch → <code>npm i node-fetch</code>
+- Statman Stopwatch → <code>npm i statman-stopwatch</code>
 
 ## Running sample in VSC
 After all dependencies is restored:
